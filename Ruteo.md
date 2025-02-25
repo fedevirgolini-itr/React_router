@@ -66,3 +66,29 @@ Es a través de este componente que sucede la "magia" del ruteo. Este será el c
 Esta componente puede tomar muchos atributos, estos son los que más utilizaremos:
 * **path:** Será el patron a utilizar para determinar si esta ruta corresponde al url de la página.
 * **element:** Establecerá el componente a renderizar cuando el url coincide con la ruta especificada.
+
+A continuación se muestra el uso del componente <Route> utilizando el código anterior:
+```javascript
+import * as React from "react";
+import { createRoot } from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+const root = createRoot(document.getElementById("root"));
+root.render(
+  <BrowserRouter>
+    <Routes>
+      <Route path="/user" element={<User />} />
+    </Routes>
+  </BrowserRouter>
+);
+```
+
+## Actividad
+
+En el ejemplo anterior, al utilizar la ruta "/user" se renderizará la componente .
+
+Utilizar la librería React Router para implementar una aplicación de React. La aplicación consultará excusas a través de la siguiente api: [https://excuser-three.vercel.app/](https://excuser-three.vercel.app/).
+1. Crear una ruta para cada categoría posible de excusa y en cada una de ellas se renderizarán excusas
+correspondientes a su categoría.
+2. Implementa una barra de navegación que permita al usuario moverse de una categoría a otra.
+3. Investiga sobre rutas dinámicas. Implementa una ruta que me permita renderizar una excusa en particular a
+través de su id. Por ejemplo: la ruta "/excuse/100" me debe renderizar la excusa cuyo id es 100.
